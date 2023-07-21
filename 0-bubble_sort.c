@@ -21,24 +21,22 @@ void change(int *v1, int *v2)
  */
 void bubble_sort(int *array, size_t size)
 {
-	size_t idx;
-	bool changed = true;
+	size_t idx, ch = 0;
 
 	if (array == NULL || size == 0)
 		return;
 
-	while (changed)
+	while (ch < size - 1)
 	{
-		changed = false;
 		for (idx = 0; idx < size; idx++)
 		{
 			if (array[idx - 1] > array[idx])
 			{
 				change(array + (idx - 1), array + idx);
-				changed = true;
 				print_array(array, size);
 			}
 		}
+		ch++;
 	}
 }
 
