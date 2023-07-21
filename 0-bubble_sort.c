@@ -1,7 +1,18 @@
 #include <stdio.h>
 #include "sort.h"
 #include <stdbool.h>
+/**
+ * change - will change the value of two ints
+ * @v1: the first one.
+ * @v2: the second one.
+ */
+void change(int *v1, int *v2)
+{
+	int ch = *v1;
 
+	*v1 = *v2;
+	*v2 = ch;
+}
 /**
  * bubble_sort - a function that sorts an array of integers
  * in ascending order using the Bubble sort algorithm.
@@ -11,7 +22,6 @@
 void bubble_sort(int *array, size_t size)
 {
 	size_t idx;
-	int ch;
 	bool changed = true;
 
 	while (changed)
@@ -21,9 +31,7 @@ void bubble_sort(int *array, size_t size)
 		{
 			if (array[idx - 1] > array[idx])
 			{
-				ch = array[idx - 1];
-				array[idx - 1] = array[idx];
-				array[idx] = ch;
+				change(array + (idx - 1), array + idx);
 				changed = true;
 				print_array(array, size);
 			}
