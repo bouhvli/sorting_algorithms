@@ -28,11 +28,11 @@ void bubble_sort(int *array, size_t size)
 
 	while (ch < size - 1)
 	{
-		for (idx = 0; idx < size; idx++)
+		for (idx = 0; idx < size - ch - 1; idx++)
 		{
-			if (array[idx - 1] > array[idx])
+			if (array[idx] > array[idx + 1])
 			{
-				change(array + (idx - 1), array + idx);
+				change(array + (idx + 1), array + idx);
 				print_array(array, size);
 			}
 		}
