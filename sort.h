@@ -19,4 +19,6 @@ void print_list(const listint_t *list);
 void bubble_sort(int *array, size_t size);
 void selection_sort(int *array, size_t size);
 void quick_sort(int *array, size_t size);
+int lomuto_partition(int *array, int lo, int hi, size_t size);
+void quick(int *array, int lo, int hi, size_t size);
 #endif
